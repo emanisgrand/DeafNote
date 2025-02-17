@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://des7llrs1vn4o"]
+
+[node name="NotesScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NotesList" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NoteEntry" type="Control" parent="NotesList"]
+layout_mode = 2
+
+[node name="NoteText" type="RichTextLabel" parent="NotesList/NoteEntry"]
+layout_mode = 0
+offset_right = 364.0
+offset_bottom = 122.0
+
+[node name="Timestamp" type="Label" parent="NotesList/NoteEntry"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 36.0
+offset_right = 61.0
+offset_bottom = 59.0
+
+[node name="ReplyButton" type="Button" parent="NotesList/NoteEntry"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 87.0
+offset_right = 200.0
+offset_bottom = 105.0
+
+[node name="DeleteButton" type="Button" parent="NotesList/NoteEntry"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 113.0
+offset_right = 199.0
+offset_bottom = 134.0
+
+[node name="AddNewNote" type="Button" parent="NotesList/NoteEntry"]
+layout_mode = 2
+offset_left = 139.0
+offset_top = 145.0
+offset_right = 196.0
+offset_bottom = 165.0
