@@ -13,15 +13,22 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
-			_create_text_box(event.position)
+			_select_text(event.position)
 		else:
 			dragging = false  # Stop dragging when touch is released
 
-	elif event is InputEventScreenDrag and selected_label:
+	elif event is InputEventScreenDrag and dragging:
 		selected_label.global_position += event.relative  # Dragging logic
 
 	elif event is InputEventGesture and selected_label:
 		_resize_text(event)
+
+func _select_text(position: Vector2):
+	for child in get_children():
+		if child is Label and child.get_global_rect().has_point(position):
+			selected_label = child
+			dragging = true
+			return
 
 # Creates a floating text box at the tap location
 func _create_text_box(position: Vector2):
